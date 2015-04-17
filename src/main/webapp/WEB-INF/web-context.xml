@@ -19,20 +19,5 @@
     </bean>
     
     <context:property-placeholder properties-ref="deployProperties" />
-    
-    <mongo:mongo id="mongo" />
-    
- 	<!-- Activate Spring Data MongoDB repository support -->
-  	<mongo:mapping-converter base-package="com.javiagd.nexmo.models" />
-  	
-  	<!-- MongoDB host -->
-	<mongo:mongo host="${mongo.host.name}" port="${mongo.host.port}" user="{mongo.db.user} password="{mongo.db.password}"/>
- 
-	<!-- Template for performing MongoDB operations -->
-  	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate" 
-  			c:mongo-ref="mongo" c:databaseName="${mongo.db.name}"/>
-	
-	<!-- Service for initializing MongoDB with sample data using MongoTemplate -->
-	<bean id="initMongoService" class="org.krams.service.InitMongoService" init-method="init"/>	
-    
+    	    
 </beans>
