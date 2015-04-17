@@ -14,7 +14,7 @@ import com.javiagd.nexmo.rest.persistence.DeliveryReceiptService;
 public class DeliveryReceiptController {
 
 	@Autowired
-	private DeliveryReceiptService receiptService;
+	private DeliveryReceiptService deliveryReceiptService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/receipt")
 	public ResponseEntity<String> receipt(
@@ -28,7 +28,7 @@ public class DeliveryReceiptController {
 			@RequestParam(value = "scts") String scts,
 			@RequestParam(value = "message-timestamp") String messageTimestamp,
 			@RequestParam(required = false, value = "client-ref") String clientRef) {
-		receiptService.add(new DeliveryReceipt(destination, networkCode,
+		deliveryReceiptService.add(new DeliveryReceipt(destination, networkCode,
 				messageId, msisdn, status, errorCode, price, scts,
 				messageTimestamp, clientRef));
 		return new ResponseEntity<String>(HttpStatus.OK);
@@ -36,6 +36,6 @@ public class DeliveryReceiptController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/get")
 	public DeliveryReceipt getReceipt(@RequestParam String messageId) {
-		return receiptService.getByMessageId(messageId);
+		return deliveryReceiptService.getByMessageId(messageId);
 	}
 }

@@ -9,16 +9,16 @@ import com.javiagd.nexmo.rest.models.DeliveryReceipt;
 public class DeliveryReceiptService implements PersistenceService {
 	
 	@Autowired
-	private DeliveryReceiptRepository receiptRepository;
+	private DeliveryReceiptRepository deliveryReceiptRepository;
 	
 	@Override
 	public DeliveryReceipt add(DeliveryReceipt deliveryReceipt) {
-		return receiptRepository.save(deliveryReceipt);
+		return deliveryReceiptRepository.save(deliveryReceipt);
 	}
 
 	@Override
 	public DeliveryReceipt getByMessageId(String messageId) {
-		return receiptRepository.findByMessageId(messageId);
+		return deliveryReceiptRepository.findByMessageId(messageId);
 	}
 	
 }
