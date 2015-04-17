@@ -5,6 +5,12 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	metadata-complete="false">
 
+    <display-name>Simple Nexmo Delivery Receipt Container</display-name>
+    
+    <welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+    
 	<servlet>
 		<servlet-name>nexmosmsreceipt</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -19,6 +25,6 @@
 		<servlet-name>nexmosmsreceipt</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	
 </web-app>
 
