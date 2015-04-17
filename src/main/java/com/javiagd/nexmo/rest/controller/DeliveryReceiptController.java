@@ -7,14 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import com.javiagd.nexmo.rest.models.DeliveryReceipt;
-import com.javiagd.nexmo.rest.persistence.DeliveryReceiptService;
+import com.javiagd.nexmo.rest.persistence.DeliveryReceiptDAO;
 
 @Controller
 @RequestMapping("receipts")
 public class DeliveryReceiptController {
 
 	@Autowired
-	private DeliveryReceiptService deliveryReceiptService;
+	private DeliveryReceiptDAO deliveryReceiptService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/receipt")
 	public ResponseEntity<String> receipt(
