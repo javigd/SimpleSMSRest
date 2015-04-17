@@ -10,7 +10,6 @@ import com.javiagd.nexmo.rest.models.DeliveryReceipt;
 import com.javiagd.nexmo.rest.persistence.DeliveryReceiptDAO;
 
 @Controller
-@RequestMapping("receipts")
 public class DeliveryReceiptController {
 
 	@Autowired
