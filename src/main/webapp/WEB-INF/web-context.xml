@@ -37,7 +37,7 @@
 	</bean>
 	
 	<bean id="userCredentials" class="org.springframework.data.authentication.UserCredentials">
-	    <constructor-arg name="username" value="${mongo.db.username}" />
+	    <constructor-arg name="user" value="${mongo.db.username}" />
 	    <constructor-arg name="password" value="${mongo.db.password}" />
 	</bean>
 
