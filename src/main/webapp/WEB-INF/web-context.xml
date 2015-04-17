@@ -45,6 +45,8 @@
 	<bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
 		<property name="host" value="${mongo.host.name}" />
 	</bean>
+	
+	<bean id="deliveryReceiptService" class="com.javiagd.nexmo.rest.persistence.DeliveryReceiptService"/>
 
 	<!-- Use this post processor to translate any MongoExceptions thrown in 
 		@Repository annotated classes -->
