@@ -23,7 +23,7 @@
 
 	<servlet-mapping>
 		<servlet-name>nexmosmsreceipt</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/nexmo/</url-pattern>
 	</servlet-mapping>
 	
 </web-app>
