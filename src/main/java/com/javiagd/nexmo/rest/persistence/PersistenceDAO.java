@@ -4,8 +4,8 @@ import com.javiagd.nexmo.rest.models.DeliveryReceipt;
 
 public interface PersistenceDAO {
 
-	public void add(DeliveryReceipt deliveryReceipt);
+	public void add(DeliveryReceipt deliveryReceipt) throws Exception;
 	
-	public DeliveryReceipt getByMessageId(String messageId);
+	public DeliveryReceipt getByMessageId(String messageId) throws Exception;
 	
 }

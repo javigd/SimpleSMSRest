@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
 import com.javiagd.nexmo.rest.models.DeliveryReceipt;
+import com.mongodb.MongoException;
 
 public class DeliveryReceiptDAO implements PersistenceDAO {
 	
@@ -16,12 +17,12 @@ public class DeliveryReceiptDAO implements PersistenceDAO {
     }
     
 	@Override
-	public void add(DeliveryReceipt deliveryReceipt) {
+	public void add(DeliveryReceipt deliveryReceipt) throws MongoException {
 		mongoOps.insert(deliveryReceipt, RECEIPT_COLLECTION);
 	}
 
 	@Override
-	public DeliveryReceipt getByMessageId(String messageId) {
+	public DeliveryReceipt getByMessageId(String messageId) throws MongoException {
         Query query = new Query(Criteria.where("_id").is(messageId));
         return this.mongoOps.findOne(query, DeliveryReceipt.class, RECEIPT_COLLECTION);
 	}
