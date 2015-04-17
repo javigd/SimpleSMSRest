@@ -1,11 +1,11 @@
-package controller;
-
-import models.DeliveryReceipt;
+package com.javiagd.nexmo.rest.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import com.javiagd.nexmo.rest.models.DeliveryReceipt;
 
 @Controller
 @RequestMapping("receipts")

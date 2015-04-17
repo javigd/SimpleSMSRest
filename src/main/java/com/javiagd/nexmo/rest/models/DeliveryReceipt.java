@@ -1,4 +1,4 @@
-package models;
+package com.javiagd.nexmo.rest.models;
 
 import javax.persistence.*;
 
