@@ -1,17 +1,20 @@
 package com.javiagd.nexmo.rest.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import com.javiagd.nexmo.rest.models.DeliveryReceipt;
+import com.javiagd.nexmo.rest.persistence.DeliveryReceiptService;
 
 @Controller
 @RequestMapping("receipts")
 public class DeliveryReceiptController {
 
-	// private final receiptDao receiptRepository;
+	@Autowired
+	private DeliveryReceiptService receiptService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/receipt")
 	public ResponseEntity<String> receipt(
@@ -25,15 +28,14 @@ public class DeliveryReceiptController {
 			@RequestParam(value = "scts") String scts,
 			@RequestParam(value = "message-timestamp") String messageTimestamp,
 			@RequestParam(required = false, value = "client-ref") String clientRef) {
-		// receiptDao.add(new DeliveryReceipt(destination, networkCode,
-		// messageId, msisdn, status, errorCode, price, scts,
-		// messageTimestamp, clientRef));
+		receiptService.add(new DeliveryReceipt(destination, networkCode,
+				messageId, msisdn, status, errorCode, price, scts,
+				messageTimestamp, clientRef));
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/get")
 	public DeliveryReceipt getReceipt(@RequestParam String messageId) {
-		return null;
-		// return receiptDao.findByMessageId(messageId);
+		return receiptService.getByMessageId(messageId);
 	}
 }

@@ -1,138 +1,121 @@
 package com.javiagd.nexmo.rest.models;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@Entity
-@Table(name = "receipt")
+@EnableMongoRepositories
 public class DeliveryReceipt {
-    
-    @Id
-    private String messageId;
-    
-    @Column(name = "destination")
-    private String destination;
-    
-    @Column(name = "network_code")
-    private String networkCode;
-    
-    @Column(name = "msisdn")
-    private String msisdn;
-    
-    @Column(name = "status")
-    private String status;
-    
-    @Column(name = "err_code")
-    private String errorCode;
-    
-    @Column(name = "price")
-    private String price;
-    
-    @Column(name = "scts")
-    private String scts;
-    
-    @Column(name = "message_timestamp")
-    private String messageTimestamp;
-    
-    @Column(name = "message_timestamp")
-    private String clientRef;
 
-    public DeliveryReceipt() {
+	@Id
+	private String messageId;
 
-    }
+	private String destination;
+	private String networkCode;
+	private String msisdn;
+	private String status;
+	private String errorCode;
+	private String price;
+	private String scts;
+	private String messageTimestamp;
+	private String clientRef;
 
-    public DeliveryReceipt(String destination, String networkCode, String messageId, String msisdn,
-            String status, String errorCode, String price, String scts,
-            String messageTimestamp, String clientRef) {
-        this.destination = destination;
+	public DeliveryReceipt() {
 
-        this.networkCode = networkCode;
-        this.messageId = messageId;
-        this.msisdn = msisdn;
-        this.status = status;
-        this.errorCode = errorCode;
-        this.price = price;
-        this.scts = scts;
-        this.messageTimestamp = messageTimestamp;
-        this.clientRef = clientRef;
-    }
+	}
 
-    public String getDestination() {
-        return destination;
-    }
+	public DeliveryReceipt(String destination, String networkCode,
+			String messageId, String msisdn, String status, String errorCode,
+			String price, String scts, String messageTimestamp, String clientRef) {
+		this.destination = destination;
 
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
+		this.networkCode = networkCode;
+		this.messageId = messageId;
+		this.msisdn = msisdn;
+		this.status = status;
+		this.errorCode = errorCode;
+		this.price = price;
+		this.scts = scts;
+		this.messageTimestamp = messageTimestamp;
+		this.clientRef = clientRef;
+	}
 
-    public String getNetworkCode() {
-        return networkCode;
-    }
+	public String getDestination() {
+		return destination;
+	}
 
-    public void setNetworkCode(String networkCode) {
-        this.networkCode = networkCode;
-    }
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
 
-    public String getMessageId() {
-        return messageId;
-    }
+	public String getNetworkCode() {
+		return networkCode;
+	}
 
-    public void setMessageId(String messageId) {
-        this.messageId = messageId;
-    }
+	public void setNetworkCode(String networkCode) {
+		this.networkCode = networkCode;
+	}
 
-    public String getMsisdn() {
-        return msisdn;
-    }
+	public String getMessageId() {
+		return messageId;
+	}
 
-    public void setMsisdn(String msisdn) {
-        this.msisdn = msisdn;
-    }
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public String getMsisdn() {
+		return msisdn;
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	public void setMsisdn(String msisdn) {
+		this.msisdn = msisdn;
+	}
 
-    public String getErrorCode() {
-        return errorCode;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public String getPrice() {
-        return price;
-    }
+	public String getErrorCode() {
+		return errorCode;
+	}
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
 
-    public String getScts() {
-        return scts;
-    }
+	public String getPrice() {
+		return price;
+	}
 
-    public void setScts(String scts) {
-        this.scts = scts;
-    }
+	public void setPrice(String price) {
+		this.price = price;
+	}
 
-    public String getMessageTimestamp() {
-        return messageTimestamp;
-    }
+	public String getScts() {
+		return scts;
+	}
 
-    public void setMessageTimestamp(String messageTimestamp) {
-        this.messageTimestamp = messageTimestamp;
-    }
+	public void setScts(String scts) {
+		this.scts = scts;
+	}
 
-    public String getClientRef() {
-        return clientRef;
-    }
+	public String getMessageTimestamp() {
+		return messageTimestamp;
+	}
 
-    public void setClientRef(String clientRef) {
-        this.clientRef = clientRef;
-    }
+	public void setMessageTimestamp(String messageTimestamp) {
+		this.messageTimestamp = messageTimestamp;
+	}
+
+	public String getClientRef() {
+		return clientRef;
+	}
+
+	public void setClientRef(String clientRef) {
+		this.clientRef = clientRef;
+	}
 }
