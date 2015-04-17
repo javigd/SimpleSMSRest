@@ -49,6 +49,8 @@
 	
 	<bean id="deliveryReceiptService" class="com.javiagd.nexmo.rest.persistence.DeliveryReceiptService"/>
 
+	<bean id="deliveryReceiptRepository" class="com.javiagd.nexmo.rest.persistence.DeliveryReceiptRepository"/>
+	
 	<bean id="deliveryReceiptController" class="com.javiagd.nexmo.rest.controller.DeliveryReceiptController"/>
 			
 	<!-- Use this post processor to translate any MongoExceptions thrown in 
