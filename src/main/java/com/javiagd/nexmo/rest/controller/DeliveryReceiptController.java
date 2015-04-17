@@ -37,4 +37,9 @@ public class DeliveryReceiptController {
 	public @ResponseBody DeliveryReceipt getReceipt(@RequestParam String messageId) {
 		return deliveryReceiptService.getByMessageId(messageId);
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/")
+	public ResponseEntity<String> get() {
+		return new ResponseEntity<String>(HttpStatus.OK);
+	}
 }
