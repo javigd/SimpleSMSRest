@@ -6,7 +6,7 @@
 	metadata-complete="false">
 
 	<servlet>
-		<servlet-name>springmvc3</servlet-name>
+		<servlet-name>nexmosmsreceipt</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -16,7 +16,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>springmvc3</servlet-name>
+		<servlet-name>nexmosmsreceipt</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
