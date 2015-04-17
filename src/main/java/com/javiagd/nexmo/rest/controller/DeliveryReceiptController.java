@@ -16,7 +16,7 @@ public class DeliveryReceiptController {
 	private DeliveryReceiptDAO deliveryReceiptService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/receipt")
-	public ResponseEntity<String> receipt(
+	public void receipt(
 			@RequestParam(value = "to") String destination,
 			@RequestParam(required = false, value = "network-code") String networkCode,
 			@RequestParam(value = "messageId") String messageId,
@@ -30,7 +30,6 @@ public class DeliveryReceiptController {
 		deliveryReceiptService.add(new DeliveryReceipt(destination, networkCode,
 				messageId, msisdn, status, errorCode, price, scts,
 				messageTimestamp, clientRef));
-		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/get")
