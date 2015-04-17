@@ -18,15 +18,15 @@ public class DeliveryReceiptController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/receipt")
 	public ResponseEntity<String> receipt(
-			@RequestParam(value = "to") String destination,
+			@RequestParam(required = false, value = "to", defaultValue="null") String destination,
 			@RequestParam(required = false, value = "network-code", defaultValue="null") String networkCode,
-			@RequestParam(value = "messageId") String messageId,
-			@RequestParam(value = "msisdn") String msisdn,
-			@RequestParam(value = "status") String status,
-			@RequestParam(value = "err-code") String errorCode,
-			@RequestParam(value = "price") String price,
-			@RequestParam(value = "scts") String scts,
-			@RequestParam(value = "message-timestamp") String messageTimestamp,
+			@RequestParam(required = false, value = "messageId", defaultValue="null") String messageId,
+			@RequestParam(required = false, value = "msisdn", defaultValue="null") String msisdn,
+			@RequestParam(required = false, value = "status", defaultValue="null") String status,
+			@RequestParam(required = false, value = "err-code", defaultValue="null") String errorCode,
+			@RequestParam(required = false, value = "price", defaultValue="null") String price,
+			@RequestParam(required = false, value = "scts", defaultValue="null") String scts,
+			@RequestParam(required = false, value = "message-timestamp") String messageTimestamp,
 			@RequestParam(required = false, value = "client-ref", defaultValue="null") String clientRef) {
 		try {
 			deliveryReceiptService.add(new DeliveryReceipt(destination, networkCode,
